@@ -1,0 +1,18 @@
+{
+    "data": [
+        {
+            "tren": "FAZMY   30",
+            "origen": "IRA",
+            "distrito_calc": "LEON",
+            "fecha_llamado": "2024-11-01T09:00:00",
+            "fh_lectura": "2024-11-01T09:33:00",
+            "direccion": "N",
+            "tiempo_hrs": 1.6,
+            "fecha_tren": "2024-10-31T00:00:00",
+            "salida_tarde": null,
+            "flag_demora": null,
+            "ultima_ubicacion": "A0353 "
+        }
+    ],
+        "fecha_Actual": "01/11/2024 11:11:28 a. m."
+}

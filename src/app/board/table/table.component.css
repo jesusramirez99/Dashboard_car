@@ -1,0 +1,82 @@
+table {
+    width: 100%;
+    background-color: black;
+    border-right: 1px solid var(--clr-gray);
+    border-bottom: 1px solid white;
+    margin-top: 40px;
+}
+
+.cell{
+  color: var( --clr-bluestrong);
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 2px solid var(--clr-gray);
+  border-top: 1px solid var(--clr-gray);
+  border-left: 1px solid var(--clr-gray);
+}
+
+.lasDateConatiner{
+  margin-top: 35px;
+  margin-right: 75%;
+}
+
+.lastDateBox{
+  background-color: black;
+  color: white;
+  padding: 25px 20px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  border: 1px solid var(--clr-gray);
+}
+
+.train-cell {
+  border-bottom: 1px solid var(--clr-gray);
+  border-left: 1px solid var(--clr-gray);
+  border-top: 1px solid var(--clr-gray);
+}
+
+.nodata{
+  font-size: 25px;
+  margin-left: 1110px;
+  margin-top: 90px;
+  color: var(--clr-bluestrong);
+}
+
+.centered{
+  text-align: center; 
+  vertical-align: middle; 
+  color: white;
+  font-size: 16px;
+}
+
+.cell-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.extra-content {
+  font-size: 16px;
+  color: white;
+}
+
+.main-content {
+  font-size: 16px;
+  color: white;
+}
+
+.mat-column-train {
+  width: 200px;
+}
+
+@media (max-width: 1920px){
+  .cell{
+    color: var( --clr-bluestrong);
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}

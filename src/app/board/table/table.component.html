@@ -1,0 +1,83 @@
+
+<div class="lasDateConatiner">
+  <div class="lastDateBox">
+    Última actualización: {{ lastDate && lastDate.getTime !== minDate.getTime ? (lastDate | date: 'dd/MM/yyyy HH:mm:ss') : 'Fecha no disponible' }}
+  </div>
+</div>
+
+<div *ngIf="dataTable && dataTable.length > 0; else noData">
+<table mat-table [dataSource]="dataTable">
+  
+    <ng-container matColumnDef="train">
+      <th mat-header-cell *matHeaderCellDef class="cell"> Id Máquina / Tren </th>
+      <td mat-cell *matCellDef="let element" class="centered train-cell">
+        <div class="cell-content">
+          <div class="extra-content">{{ element.loc_lider }}</div>
+          <div class="main-content">{{ element.tren }}</div>
+        </div>
+      </td>
+    </ng-container>
+ 
+    <ng-container matColumnDef="dateTrain">
+      <th mat-header-cell *matHeaderCellDef class="cell"> Fecha del tren </th>
+      <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.fecha_tren | date: 'dd/MM/yyyy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dateCall">
+      <th mat-header-cell *matHeaderCellDef class="cell"> Fecha Llamada </th>
+      <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.fecha_llamado | date: 'dd/MM/yyyy HH:mm'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TrainDirection">
+      <th mat-header-cell *matHeaderCellDef class="cell"> Dirección </th>
+      <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.direccion}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="District">
+      <th mat-header-cell *matHeaderCellDef class="cell"> Distrito </th>
+      <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.distrito_calc}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="initialStation">
+        <th mat-header-cell *matHeaderCellDef class="cell"> Estación Inicial </th>
+        <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.origen  | pipeValueFormat}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="exitTrain">
+        <th mat-header-cell *matHeaderCellDef class="cell"> Salida de Tren AEI </th>
+        <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.fh_lectura | date: 'dd/MM/yyyy HH:mm'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="travelTime">
+        <th mat-header-cell *matHeaderCellDef class="cell"> Tiempo de Recorrido (Horas) </th>
+        <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.tiempo_hrs}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastLocation">
+        <th mat-header-cell *matHeaderCellDef class="cell"> Ultima Ubicación</th>
+        <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.ultima_ubicacion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastRead">
+        <th mat-header-cell *matHeaderCellDef class="cell"> Ultima lectura </th>
+        <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.ultima_lectura | date: 'dd/MM/yyyy HH:mm'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Delay">
+        <th mat-header-cell *matHeaderCellDef class="cell"> Demora </th>
+        <td mat-cell *matCellDef="let element" class="centered train-cell"> {{element.flag_demora}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Detention">
+        <th mat-header-cell *matHeaderCellDef class="cell"> Detenido </th>
+        <td mat-cell *matCellDef="let element" class="centered train-cell"> {{ element.tag_detenido }} </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-row"></tr>
+  </table>
+</div>
+
+<ng-template #noData>
+    <p class="nodata">No hay datos para mostrar.</p>
+</ng-template>
