@@ -25,7 +25,8 @@ export class LoginComponent {
 
     ngOnInit(): void {
       const lastPage = sessionStorage.getItem('page-gps');
-      if (lastPage) {
+      const username = sessionStorage.getItem('username-gps');
+      if (lastPage && username) {
         this.router.navigateByUrl(lastPage);
       }
     }
@@ -42,8 +43,8 @@ export class LoginComponent {
                 Swal.fire('Error', "TU USUARIO ESTA DESACTIVADO", 'info');
                 return;
               }
-              localStorage.setItem('page-gps', `/dashboard`);
-              localStorage.setItem('userlevel-gps', data.nivel_usuario.toString());
+              sessionStorage.setItem('page-gps', `/dashboard`);
+              sessionStorage.setItem('userlevel-gps', data.nivel_usuario.toString());
 
               this.router.navigateByUrl('/dashboard');
               console.log('ingreso');

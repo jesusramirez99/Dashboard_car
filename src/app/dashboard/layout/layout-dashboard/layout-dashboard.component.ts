@@ -14,7 +14,7 @@ export class LayoutDashboardComponent {
   public confiButtons: pages[] = [];
 
   ngOnInit(): void {
-      const userLevel = localStorage.getItem('userlevel-gps');
+      const userLevel = sessionStorage.getItem('userlevel-gps');
       this.confiButtons = this.getButtonsLevel(userLevel);
   }
 
@@ -37,13 +37,13 @@ export class LayoutDashboardComponent {
   cambiarPagina(url: string){
     const page: string = this.confiButtons.find(conf => conf.url === url)!.nombre
     this.PagesService.setStatepagesSignal(page);
-    localStorage.setItem('page-gps', `dashboard/${url}`)
+    sessionStorage.setItem('page-gps', `dashboard/${url}`)
     this.router.navigateByUrl(`dashboard/${url}`)
   }
 
   logout(){
-    localStorage.removeItem('username-gps');
-    localStorage.removeItem('page-gps');
+    sessionStorage.removeItem('username-gps');
+    sessionStorage.removeItem('page-gps');
     this.router.navigateByUrl('login');
     
   }

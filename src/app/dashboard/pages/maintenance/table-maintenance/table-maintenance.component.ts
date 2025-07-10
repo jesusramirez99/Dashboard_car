@@ -135,7 +135,7 @@ export class TableMaintenanceComponent implements OnInit {
         icon: 'info',
         title: 'Detalles',
         html: detalles,
-        background: 'var(--clr-darlight)',
+        background: 'var(--clr-dark)',
         color: 'var(--clr-light)',
       });
   }
