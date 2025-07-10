@@ -1,0 +1,37 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+
+        <button mat-icon-button class="menu-button" (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <img src="http://10.10.76.150:8080/imagenes/logotipo-GM_white.svg" alt="logo de GM">
+        <div class="d-flex justify-content-around">
+            <app-state-pages></app-state-pages>
+            <app-show-current-day></app-show-current-day>
+            <button class="logout" (click)="logout()">
+            <span style="font-size: 20px;">cerrar sesión</span>
+            <mat-icon style="font-size: 26px;">logout</mat-icon>
+        </button>
+        </div>
+
+     
+         
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav class="custom-sidebar">
+        <mat-nav-list class="hover" *ngFor="let boton of confiButtons" (click)="sidenav.toggle(); cambiarPagina(boton.url)">
+            <div style="display: flex; align-items: center; padding-bottom: 10px; width: auto;" class="choice">
+                <mat-icon style="margin: 0 30px 0 30px; color: #8495b0; padding: 0 30px 30px 0;">{{ boton.icon }}</mat-icon>
+                <span mat-list-item> {{ boton.nombre }} </span>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav">
+        <div  class="main">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

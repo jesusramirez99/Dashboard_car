@@ -1,18 +1,19 @@
-{
-    "data": [
-        {
-            "tren": "FAZMY   30",
-            "origen": "IRA",
-            "distrito_calc": "LEON",
-            "fecha_llamado": "2024-11-01T09:00:00",
-            "fh_lectura": "2024-11-01T09:33:00",
-            "direccion": "N",
-            "tiempo_hrs": 1.6,
-            "fecha_tren": "2024-10-31T00:00:00",
-            "salida_tarde": null,
-            "flag_demora": null,
-            "ultima_ubicacion": "A0353 "
-        }
-    ],
-        "fecha_Actual": "01/11/2024 11:11:28 a. m."
-}
+[
+    {
+        "fecha_lt": "2025-05-09 12:16:29.0",
+        "permanencia": 119.3,
+        "origen": "Q0779",
+        "nombre_estacion": "AGUACALIENTE, SI",
+        "destino": "T0757",
+        "notificaciones": 12.0,
+        "unidad": "UP 522090",
+        "estado": "IN",
+        "geocerca": 0,
+        "numero_guia": "98395",
+        "tren_lt": "DPNGD",
+        "nombre_estacion_completo": "ALGODON, SI",
+        "cliente": "COPPEL",
+        "nombre_geocerca": "PAREDON",
+        "meta_hrs": 4
+    }
+]

@@ -1,0 +1,85 @@
+mat-toolbar{
+    background-color: var( --clr-dark);
+    height: 5vh;
+}
+
+.custom-sidebar{
+    background-color: var(--clr-light);
+    width: 330px;
+}
+
+mat-sidenav-container {
+  height: 95vh; 
+}
+
+mat-sidenav {
+  height: 95vh; 
+  min-height: 95vh;
+}
+
+.hover{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding-top: 20px;
+}
+
+.hover:hover{
+    background-color: rgb(191, 190, 190);
+    color: white;
+}
+
+span{
+    font-size: 25px;
+    font-weight: 400px;
+}
+
+img {
+    margin-left: 80px;
+    margin-top: 5px;
+    height: 100px;
+    width: 250px;
+}
+
+.menu-button {
+  background-color: black !important; /* Fondo negro */
+  border-radius: 4px; /* Bordes redondeados opcionales */
+  width: 48px; /* Define un ancho fijo */
+  height: 48px; /* Define una altura fija */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--clr-dark);
+}
+
+.menu-button mat-icon {
+  color: white !important; /* Color blanco para las rayas */
+  font-size: 28px; /* Ajusta el tamaño del ícono */
+}
+
+.d-flex{
+    width: 70%;
+}
+
+.main{   
+    background-color: var(--clr-dark);
+}
+
+.sidenav{
+    background-color: var(--clr-dark);
+}
+
+.logout{
+    color: white;
+    background-color: var(--clr-dark);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+    border: 2px solid var(--clr-dark);
+}
+
+.choice:hover{
+    cursor: pointer;
+}

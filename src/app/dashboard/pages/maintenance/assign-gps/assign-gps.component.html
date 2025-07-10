@@ -1,0 +1,32 @@
+<div class="modal">
+  <div class="modal-content">
+    <h2 class="title">Datos de Asignación</h2>
+
+      <form [formGroup]="formAssign" (ngSubmit)="saveData()">
+        <label for="Name">Nombre:</label>
+        <input id="Name" type="text" formControlName="Name" placeholder="Ingresa un nombre"/>
+        <div *ngIf="formAssign.get('Name')?.invalid && formAssign.get('Name')?.touched" class="error">
+          <span *ngIf="formAssign.get('Name')?.hasError('required')">Este campo es requerido</span>
+          <span *ngIf="formAssign.get('Name')?.hasError('pattern')">El formato del nombre es invalido</span>
+        </div>
+
+        
+        <select id="selectUno" formControlName="selectUno">
+          <option value="" disabled selected>Selecciona un origen</option>
+          <!--<option *ngFor="let opcion of opcionesSelect1" [value]="opcion">{{ opcion }}</option>-->
+        </select>
+
+        
+        <select id="selectDos" formControlName="selectDos">
+          <option value="" disabled selected>Selecciona un destino</option>
+          <!--<option *ngFor="let item of opcionesSelect2" [value]="item">{{ item }}</option>-->
+        </select>
+
+
+        <div class="button-container">
+          <button type="submit" class="btnGuardar">GUARDAR</button>
+          <button (click)="cerrarModal()" class="btnCancel">CANCELAR</button>
+        </div>
+      </form>
+  </div>
+</div>

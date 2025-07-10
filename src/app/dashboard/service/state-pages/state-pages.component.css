@@ -1,0 +1,28 @@
+
+
+.dayContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    margin-left: 400px;
+}
+
+.large-text {
+    font-size: 32px;
+    background-color: var(--clr-dark);
+    color: var(--clr-bluestrong);
+    margin-top: 10px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.small-text {
+    font-size: 32px;
+    background-color: var(--clr-dark);
+    color: var(--clr-bluestrong);
+    margin-top: 10px;
+    margin-left: 227px;
+    margin-right: 250px;
+}

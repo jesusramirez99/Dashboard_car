@@ -1,0 +1,95 @@
+
+<div class="tables-container">
+    <div class="section">
+        <div class="title">
+            <h2>Disponibles</h2>
+        </div>
+
+        <div *ngIf="available.length > 0; else noDataAvailable" class="section-table">
+            <input matInput (keyup)="applyFilterAvailable($event)" placeholder="Ingresa IMEI" class="custom-input">
+            <div class="table-scroll">
+
+                <table mat-table [dataSource]="dataSource">
+                <ng-container matColumnDef="IMEI">
+                <th mat-header-cell *matHeaderCellDef class="cell"> IMEI </th>
+                <td mat-cell *matCellDef="let element" class="centered train-cell"> {{ element.IMEI }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Uid">
+                <th mat-header-cell *matHeaderCellDef class="cell"> Uid </th>
+                <td mat-cell *matCellDef="let element" class="centered train-cell"> {{ element.Uid }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef class="cell"> Asignación </th>
+                <td mat-cell *matCellDef="let element" class="centered train-cell"> 
+                    <span class="text-center">{{ element.Name }}</span>
+                    <button class="info-button" (click)="showInformationAvailable(element.Uid)">
+                        <span class="material-symbols-outlined">info</span>
+                    </button>
+                    
+                    <button class="add-button" (click)="openModal(element)">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-row"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="title">
+            <h2>Asignados</h2>
+        </div>
+
+        <div *ngIf="assigned.length > 0; else noDataAssigned">
+            <input matInput (keyup)="applyFilterAssigned($event)" placeholder="Ingresa IMEI" class="custom-input">
+            <div class="table-scroll">
+ 
+
+                <table mat-table [dataSource]="dataSource2">
+                <ng-container matColumnDef="IMEI">
+                <th mat-header-cell *matHeaderCellDef class="cell"> IMEI </th>
+                <td mat-cell *matCellDef="let element" class="centered train-cell"> {{ element.IMEI }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Uid">
+                <th mat-header-cell *matHeaderCellDef class="cell"> Uid </th>
+                <td mat-cell *matCellDef="let element" class="centered train-cell"> {{ element.Uid }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef class="cell"> Asignación </th>
+                <td mat-cell *matCellDef="let element" class="centered train-cell"> 
+                    <span class="text-center">{{ element.Name }}</span>
+                    <button class="info-button"  (click)="showInformationAsiggned(element.Uid)">
+                        <span class="material-symbols-outlined">info</span>
+                    </button>
+
+                    <button class="delete-button" (click)="Deallocate(element)">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-row"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+      
+<ng-template #noDataAssigned>
+    <p class="nodata">No hay datos para mostrar.</p>
+</ng-template>        
+
+<ng-template #noDataAvailable>
+    <p class="nodata">No hay datos para mostrar.</p>
+</ng-template>
+
+<app-assign-gps *ngIf="openedModal" (nameCaptured)="guardarNombre($event)" (cerrar)="closeModal()"></app-assign-gps>
